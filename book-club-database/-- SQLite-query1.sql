@@ -1,4 +1,4 @@
 -- SQLite
 SELECT *
-FROM books
+FROM books, members
 

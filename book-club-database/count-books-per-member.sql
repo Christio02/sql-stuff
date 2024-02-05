@@ -1,7 +1,8 @@
 SELECT
     members.member_id,
     members.name,
-    COUNT(checkouts.book_id) AS AntallBøker
+    COUNT(checkouts.book_id) AS AntallBøker,
+    SUM(COUNT(checkouts.book_id)) OVER() AS TotalAntall
 FROM
     members
 INNER JOIN checkouts ON members.member_id = checkouts.member_id
